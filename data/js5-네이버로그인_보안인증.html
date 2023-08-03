@@ -43,5 +43,31 @@
             </fieldset>
         </form>
     </div>
+    <script>
+        // 네이버 로그인 조건
+        /*
+            1. 아이디 안적고 비밀번호 적은 후 로그인버튼 클릭 시 = 아이디 오류
+            2. 아이디 적고 비밀번호 안적고 로그인 버튼 클릭 시 = 비밀번호 오류
+            3. 아이디, 비밀번호 모두 안적고 로그인 버튼 클릭 시 = 아이디, 비밀번호 입력하세요 메세지
+            4. 아이디, 비밀번호 모두 입력하고 로그인 버튼 클릭 시 = 로그인 성공
+        */
+
+        const user_id = document.querySelector('#user_id')
+        const user_pw = document.querySelector('#user_pw')
+        const result = document.querySelector('#error_result')
+        const login_btn = document.querySelector('#login_btn')
+        console.log(user_id, user_pw, result, login_btn)
+        login_btn.addEventListener('click',function(){
+            if(user_id.value === '' && user_pw.value !== ''){
+                result.innerHTML = "아이디 오류"
+            }else if(user_id.value !== '' && user_pw.value === ''){
+                result.innerHTML = '비밀번호 오류'
+            }else if(user_id.value === '' && user_pw.value === ''){
+                result.innerHTML = '아이디, 비밀번호를 입력하세요'
+            }else {
+                result.innerHTML = '로그인 성공'
+            }
+        });
+    </script>
 </body>
 </html>
