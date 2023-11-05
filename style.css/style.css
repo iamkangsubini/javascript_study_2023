@@ -1,0 +1,9 @@
+header {}
+header #nav {}
+header #nav .left {}
+header #nav .left span {font-size: 9rem; color: brown;
+background-color: antiquewhite; display: block;} 
+
+header #nav .right img {width: 300px; height: 300px; cursor: pointer;}
+
+main form fieldset input {display: block;}
